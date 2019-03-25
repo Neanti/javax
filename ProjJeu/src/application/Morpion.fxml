@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Morpion">
+   <children>
+      <BorderPane layoutX="150.0" layoutY="76.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <bottom>
+            <Button mnemonicParsing="false" text="Button" BorderPane.alignment="CENTER" />
+         </bottom>
+         <center>
+            <GridPane fx:id="Grille" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="b00" mnemonicParsing="false" onMouseClicked="#ClickB00" />
+                  <Button fx:id="b01" mnemonicParsing="false" onMouseClicked="#ClickB01" GridPane.columnIndex="1" />
+                  <Button fx:id="b02" mnemonicParsing="false" onMouseClicked="#ClickB02" GridPane.columnIndex="2" />
+                  <Button fx:id="b10" mnemonicParsing="false" onMouseClicked="#ClickB10" GridPane.rowIndex="1" />
+                  <Button fx:id="b11" mnemonicParsing="false" onMouseClicked="#ClickB11" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button fx:id="b12" mnemonicParsing="false" onMouseClicked="#ClickB12" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Button fx:id="b20" mnemonicParsing="false" onMouseClicked="#ClickB20" GridPane.rowIndex="2" />
+                  <Button fx:id="b21" mnemonicParsing="false" onMouseClicked="#ClickB21" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Button fx:id="b22" mnemonicParsing="false" onMouseClicked="#ClickB22" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
