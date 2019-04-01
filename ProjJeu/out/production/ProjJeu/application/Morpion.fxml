@@ -10,9 +10,6 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Morpion">
    <children>
       <BorderPane layoutX="150.0" layoutY="76.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <bottom>
-            <Button mnemonicParsing="false" text="Button" BorderPane.alignment="CENTER" />
-         </bottom>
          <center>
             <GridPane fx:id="Grille" BorderPane.alignment="CENTER">
               <columnConstraints>

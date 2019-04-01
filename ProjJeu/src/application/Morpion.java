@@ -1,11 +1,17 @@
 package application;
 
+import Server.ReceiveMessageInterface;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 
 public class Morpion {
     @FXML
@@ -29,15 +35,38 @@ public class Morpion {
     @FXML
     public Button b22;
     public int[][] jeu;
-    public boolean tour = true;
+
 
     private Applic applic;
+    private ReceiveMessageInterface rmi;
+    private int joue;
 
     public void setApplic(Applic applic) {
         this.applic = applic;
     }
     public void initMorp()
     {
+
+        ReceiveMessageInterface rmiServer;
+        Registry registry;
+        String serverAddress="100.64.48.146";
+        String serverPort="3232";
+        System.out.println
+                (serverAddress + ":" + serverPort);
+        try{
+            registry= LocateRegistry.getRegistry
+                    (serverAddress,(new Integer(serverPort)).intValue());
+            rmiServer=(ReceiveMessageInterface)(registry.lookup("rmiServer"));
+            this.rmi = rmiServer;
+
+        }
+        catch(RemoteException e){
+            e.printStackTrace();
+        }
+        catch(NotBoundException e){
+            System.err.println(e);
+        }
+
         Grille.setStyle("-fx-grid-lines-visible: true");
         b00.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
         b01.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
@@ -105,7 +134,7 @@ public class Morpion {
 
     public void play(int x, int y)
     {
-        tour = !tour;
+        joue++;
         if(jeu[x][y] != 0)
         {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -113,23 +142,31 @@ public class Morpion {
             alert.setHeaderText(null);
             alert.setContentText("Vous ne pouvez pas jouer ici !");
             alert.showAndWait();
-            tour = !tour;
         }
-        else if(tour)
             jeu[x][y] = 1;
-        else
-            jeu[x][y] = 2;
+
         refresh();
-        check_win();
+        if(check_win(1) || joue == 9)
+            System.out.println("fin");
+        try {
+            refresh();
+            jeu = rmi.Morp2(jeu);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        refresh();
+        check_win(2);
+        joue++;
     }
 
-    public void check_win()
+    public boolean check_win(int j)
     {
+        System.out.println("joue="+joue);
         int i = 0;
         i = check_ligne(0) + check_ligne(1) + check_ligne(2) + check_col(0) + check_col(1) + check_col(2) + check_diag();
         if(i != 0)
         {
-            if(tour)
+            if(j==1)
             {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Information de jeu");
@@ -152,9 +189,23 @@ public class Morpion {
                     jeu[n][m]  = 0;
                 }
             }
+            joue = 0;
             refresh();
-            return;
+            return true;
         }
+        else if(joue == 9)
+        {
+            for(int n = 0;n < 3;n++)
+            {
+                for(int m = 0;m < 3;m++)
+                {
+                    jeu[n][m] = 0;
+                }
+            }
+            joue = 0;
+            refresh();
+        }
+        return false;
     }
 
     public int check_ligne(int l)

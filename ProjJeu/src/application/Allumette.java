@@ -61,9 +61,8 @@ public class Allumette {
         Registry registry;
         String serverAddress="100.64.48.146";
         String serverPort="3232";
-        String text="BLlllo";
-        System.out.println
-                ("sending " + text + " to " +serverAddress + ":" + serverPort);
+
+        System.out.println(serverAddress + ":" + serverPort);
         try{
             registry= LocateRegistry.getRegistry
                     (serverAddress,(new Integer(serverPort)).intValue());
