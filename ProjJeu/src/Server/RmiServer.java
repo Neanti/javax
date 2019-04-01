@@ -4,6 +4,7 @@ import java.rmi.*;
 import java.rmi.registry.*;
 import java.rmi.server.*;
 import java.net.*;
+import java.util.Random;
 
 public class RmiServer extends
         java.rmi.server.UnicastRemoteObject implements ReceiveMessageInterface{
@@ -29,6 +30,17 @@ public class RmiServer extends
             }
             System.out.println("loop\n");
         }
+    }
+
+    @Override
+    public int Allu(int x) throws RemoteException {
+        Random random = new Random();
+        if(x == 1)
+        {
+            return 1;
+        }
+        else
+            return random.nextInt(5);
     }
 
     public RmiServer() throws RemoteException{

@@ -80,5 +80,21 @@ public class Applic extends Application {
         }
     }
 
+    public void ShowAllu() {
+        try {
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(application.Applic.class.getResource("Allumette.fxml"));
+            AnchorPane Addproduit = (AnchorPane) loader.load();
+            root.setCenter(Addproduit);
+            Allumette controller = loader.getController();
+            controller.setApplic(this);
+            controller.init();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

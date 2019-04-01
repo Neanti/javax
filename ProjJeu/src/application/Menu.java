@@ -14,6 +14,10 @@ public class Menu {
     {
         applic.showMorpion();
     }
+    public void ShowAllu()
+    {
+        applic.ShowAllu();
+    }
 
 
 }

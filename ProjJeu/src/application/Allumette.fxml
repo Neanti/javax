@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Allumette">
+   <children>
+      <BorderPane prefHeight="400.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <GridPane BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="b1" mnemonicParsing="false" onMouseClicked="#ClickB1">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin></Button>
+                  <Button fx:id="b2" mnemonicParsing="false" onMouseClicked="#ClickB2" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin></Button>
+                  <Button fx:id="b3" mnemonicParsing="false" onMouseClicked="#ClickB3" GridPane.columnIndex="2">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin></Button>
+                  <Button fx:id="b4" mnemonicParsing="false" onMouseClicked="#ClickB4" GridPane.columnIndex="3">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin></Button>
+                  <Button fx:id="b5" mnemonicParsing="false" onMouseClicked="#ClickB5" GridPane.columnIndex="4">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin></Button>
+                  <Button fx:id="b6" mnemonicParsing="false" onMouseClicked="#ClickB6" GridPane.columnIndex="5">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin></Button>
+                  <Button fx:id="b7" mnemonicParsing="false" onMouseClicked="#ClickB7" GridPane.columnIndex="6">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin></Button>
+                  <Button fx:id="b8" mnemonicParsing="false" onMouseClicked="#ClickB8" GridPane.columnIndex="7">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin></Button>
+                  <Button fx:id="b9" mnemonicParsing="false" onMouseClicked="#ClickB9" GridPane.columnIndex="8">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin></Button>
+               </children>
+            </GridPane>
+         </center>
+         <bottom>
+            <Button fx:id="bp" mnemonicParsing="false" onMouseClicked="#Play" text="Fin de tour" BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

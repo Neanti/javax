@@ -145,6 +145,14 @@ public class Morpion {
                 alert.setContentText("Victoire de O");
                 alert.showAndWait();
             }
+            for(int n = 0;n < 3;n++)
+            {
+                for(int m = 0;m < 3;m++)
+                {
+                    jeu[n][m]  = 0;
+                }
+            }
+            refresh();
             return;
         }
     }
@@ -178,38 +186,56 @@ public class Morpion {
             b00.setText("X");
         else if(jeu[0][0] == 2)
             b00.setText("O");
+        else
+            b00.setText("");
         if(jeu[0][1] == 1)
             b01.setText("X");
         else if(jeu[0][1] == 2)
             b01.setText("O");
+        else
+            b01.setText("");
         if(jeu[0][2] == 1)
             b02.setText("X");
         else if(jeu[0][2] == 2)
             b02.setText("O");
+        else
+            b02.setText("");
         if(jeu[1][0] == 1)
             b10.setText("X");
         else if(jeu[1][0] == 2)
             b10.setText("O");
+        else
+            b10.setText("");
         if(jeu[1][1] == 1)
             b11.setText("X");
         else if(jeu[1][1] == 2)
             b11.setText("O");
+        else
+            b11.setText("");
         if(jeu[1][2] == 1)
             b12.setText("X");
         else if(jeu[1][2] == 2)
             b12.setText("O");
+        else
+            b12.setText("");
         if(jeu[2][0] == 1)
             b20.setText("X");
         else if(jeu[2][0] == 2)
             b20.setText("O");
+        else
+            b20.setText("");
         if(jeu[2][1] == 1)
             b21.setText("X");
         else if(jeu[2][1] == 2)
             b21.setText("O");
+        else
+            b21.setText("");
         if(jeu[2][2] == 1)
             b22.setText("X");
         else if(jeu[2][2] == 2)
             b22.setText("O");
+        else
+            b22.setText("");
     }
 
 }

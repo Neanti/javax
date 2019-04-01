@@ -11,9 +11,9 @@ public class RmiClient{
     static public void main(String args[]) throws InterruptedException {
         ReceiveMessageInterface rmiServer;
         Registry registry;
-        String serverAddress=args[0];
-        String serverPort=args[1];
-        String text=args[2];
+        String serverAddress="100.64.48.146";
+        String serverPort="3232";
+        String text="BLlllo";
         System.out.println
                 ("sending " + text + " to " +serverAddress + ":" + serverPort);
         try{
